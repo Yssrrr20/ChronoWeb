@@ -1,23 +1,20 @@
 // src/app/layout.js
-import './globals.css'; // Impor CSS global (termasuk Tailwind)
+import './globals.css'; //
 import { Inter } from 'next/font/google';
-import Sidebar from '@/components/Sidebar'; // <-- Mengimpor Sidebar menggunakan alias path '@/'
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] }); //
 
 export const metadata = {
-  title: 'ChronoNews Admin', // Anda bisa sesuaikan judulnya
-  description: 'Admin Dashboard untuk ChronoNews',
+  title: 'ChronoNews', // Judul diubah agar lebih general
+  description: 'Welcome to ChronoNews',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex bg-gray-50 dark:bg-gray-900`}> {/* 'flex' untuk layout sidebar-konten */}
-        <Sidebar /> {/* <-- Komponen Sidebar kita tampilkan di sini */}
-        <main className="flex-1 p-6 overflow-y-auto"> {/* Konten utama halaman */}
-          {children} {/* 'children' adalah konten dari page.js */}
-        </main>
+      {/* Kelas 'flex' dihapus dari body agar tidak mengganggu layout per bagian */}
+      <body className={`${inter.className} bg-gray-50 dark:bg-gray-900`}>
+        {children} {/* Hanya me-render children tanpa komponen layout tambahan */}
       </body>
     </html>
   );

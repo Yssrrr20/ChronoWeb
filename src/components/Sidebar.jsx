@@ -2,10 +2,10 @@
 'use client';
 
 import React from 'react';
-import NavItem from './NavItem'; // Mengimpor NavItem dari folder yang sama
+import NavItem from './NavItem'; 
 import Link from 'next/link';
 
-// Placeholder ikon sederhana
+// Placeholder ikon 
 const PlaceholderIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
     <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
